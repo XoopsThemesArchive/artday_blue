@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}> 
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+<script type=text/javascript>
+<!--
+preImg1= new Image();
+preImg1.src = "<{$xoops_imageurl}>images/topleft.gif";
+preImg2= new Image();
+preImg2.src = "<{$xoops_imageurl}>images/topline.gif";
+preImg3= new Image();
+preImg3.src = "<{$xoops_imageurl}>images/leftline.gif";
+preImg4= new Image();
+preImg4.src = "<{$xoops_imageurl}>images/bottomleft.gif";
+preImg5= new Image();
+preImg5.src = "<{$xoops_imageurl}>images/bottomline.gif";
+// -->
+</script>
+</head>
+
+<body> 
+<{include_php file="$xoops_rootpath/themes/artday_blue/ex_assign.php"}>
+<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" id="main">
+ <tr>
+  <td rowspan="2" id="leftcolumn"> 
+  <div class="headerlogo">
+<a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>images/logo.gif" align="center" /></a> 
+</div>
+      <!-- Start left blocks loop -->
+      <{foreach item=block from=$xoops_lblocks}> 
+	  <{if $block.title|regex_replace:"/.*none/":"none" ne "none"}>
+	  <div class="blockTitle"><{$block.title}></div>
+	  <{/if}>
+      <div class="blockContent"><{$block.content}></div>
+      <img src="<{$xoops_imageurl}>images/spacer.gif" width="150" height="1" alt="" /> 
+      <{/foreach}> 
+      <!-- End left blocks loop -->
+	  </td>
+   <td>
+<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td id="headerbanner"> <{$xoops_banner}> </td>
+  </tr>
+   <tr> 
+    <td id="headerbar"> 
+	<!-- Start user menu bar-->
+	<{if $xoops_isuser}>
+	<a href="<{$xoops_url}>/user.php"> 
+      Welcome <img style="vertical-align: bottom;" src="<{$xoops_imageurl}>images/face.gif" />
+	  <{$xoops_uname}></a> &nbsp;|&nbsp;
+      <a href="<{$xoops_url}>/edituser.php">Edit account</a> &nbsp;|&nbsp;
+      <a href="<{$xoops_url}>/modules/newbb">Forum</a> &nbsp;|&nbsp;
+      <a href="<{$xoops_url}>/viewpmsg.php">Inbox</a>
+      <{if $ex_new_messages > 0}>
+<{if $smarty.server.SCRIPT_NAME == "/index.php"}>
+<script language="javascript" type="text/javascript">
+<!--
+msg="<b>Zivjo! <{$xoops_uname}></b><br />imas <span style='color:#ff0000; font-weight: bold;'><{$ex_new_messages}></span> novo zasebno sporocilo!";
+openwin (msg)
+function openwin(message) {
+w = open("", "message", "width=250,height=150,toolbar=no,scrollbars=yes,resizable=yes");
+w.focus();
+w.document.open();
+w.document.write("<html><head></head><meta http-equiv='content-type' content='text/html; charset=<{$xoops_charset}>' /><title>Imas novo zasebno sporocilo</title><body><br><br><center>");
+w.document.write(message);
+w.document.write("<br /><br /><a href=\"javascript:window.opener.location='<{$xoops_url}>/viewpmsg.php';window.close();\">");
+w.document.write("View</a>");
+w.document.write("</center></body></html>");
+w.document.close();
+}
+// -->
+</script>
+<{/if}>
+      <a class="highlight" href="<{$xoops_url}>/viewpmsg.php">
+      <span style="color:#ff6600; font-weight: nomal;">New -<{$ex_new_messages}>
+      </span></a>
+      <{/if}>
+      &nbsp;|&nbsp;
+      <{if $xoops_isadmin}>
+      <a href="<{$xoops_url}>/admin.php">Administration</a>
+      &nbsp;|&nbsp;
+      <{/if}>
+      <a href="<{$xoops_url}>/user.php?op=logout">Logout</a> 
+      <{else}> <a href="<{$xoops_url}>/user.php">Login</a>&nbsp;|&nbsp;
+      <a href="<{$xoops_url}>/register.php">Register now!</a> 
+      <{/if}> 
+	 </td>
+	 <!-- End user menu bar -->
+  </tr>
+</table>
+<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" id="table_edge">
+  <tr> 
+    <td id="table_topleft"><img src="<{$xoops_imageurl}>images/spacer.gif" width="23" height="23" alt="" /></td>
+    <td id="table_topline"><img src="<{$xoops_imageurl}>images/spacer.gif" height="23" alt="" /></td>
+  </tr>
+</table>
+<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td id="table_leftline"><img src="<{$xoops_imageurl}>images/leftline.gif" width="23" alt="" /></td>
+    <td id="centercolumn"> 
+      <!-- Display center blocks if any -->
+      <{if $xoops_showcblock == 1}>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td id="centerCcolumn" colspan="2"> 
+            <!-- Start center-center blocks loop -->
+            <{foreach item=block from=$xoops_ccblocks}>
+			<table align="center" cellpadding="0" cellspacing="2">
+              <tr> 
+                <td>
+				  <{if $block.title|regex_replace:"/.*none/":"none" ne "none"}>
+				  <div class="blockTitle"><{$block.title}></div>
+				  <{/if}>
+                  <div class="blockContent"><{$block.content}></div>
+				  </td>
+              </tr>
+            </table>
+            <{/foreach}> 
+            <!-- End center-center blocks loop -->
+          </td>
+        </tr>
+        <tr> 
+          <td id="centerLcolumn"> 
+            <!-- Start center-left blocks loop -->
+            <{foreach item=block from=$xoops_clblocks}>
+			<table align="center" cellpadding="3" cellspacing="2">
+              <tr> 
+                <td> 
+				  <{if $block.title|regex_replace:"/.*none/":"none" ne "none"}>
+				  <div class="blockTitle"><{$block.title}></div>
+				  <{/if}>
+                  <div class="blockContent"><{$block.content}></div>
+				  </td>
+              </tr>
+            </table>
+            <{/foreach}> 
+            <!-- End center-left blocks loop -->
+          </td>
+          <td id="centerRcolumn"> 
+            <!-- Start center-right blocks loop -->
+            <{foreach item=block from=$xoops_crblocks}>
+			<table align="center" cellpadding="3" cellspacing="2">
+              <tr> 
+                <td> 
+				  <{if $block.title|regex_replace:"/.*none/":"none" ne "none"}>
+				  <div class="blockTitle"><{$block.title}></div>
+				  <{/if}>
+                  <div class="blockContent"><{$block.content}></div></td>
+              </tr>
+            </table>
+            <{/foreach}> 
+            <!-- End center-right blocks loop -->
+          </td>
+        </tr>
+      </table>
+      <{/if}> 
+      <!-- End display center blocks -->
+      <div id="content"> <{$xoops_contents}> </div>
+      <br /> <br />
+	  </td>
+    <{if $xoops_showrblock == 1}> 
+    <td id="rightcolumn"> 
+      <!-- Start right blocks loop -->
+      <{foreach item=block from=$xoops_rblocks}>
+	  <table border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+	  <td>
+	  <{if $block.title|regex_replace:"/.*none/":"none" ne "none"}>
+      <div class="blockTitle"><{$block.title}></div>
+	  <{/if}>
+      <div class="blockContent"><{$block.content}></div>
+      </td>
+      </tr>
+      </table>
+      <div class="space"></div>
+      <{/foreach}>
+      <!-- End right blocks loop -->
+      <br />
+	  <img src="<{$xoops_imageurl}>images/spacer.gif" width="180" height="1" alt="" /> 
+       <{/if}> 
+	  </td>
+    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0" id="table_edge">
+      <tr> 
+        <td id="table_bottomleft"><img src="<{$xoops_imageurl}>images/spacer.gif" width="23" height="23" alt="" /></td>
+        <td id="table_bottomline"><img src="<{$xoops_imageurl}>images/spacer.gif" height="23" alt="" /></td>
+		</tr>
+		</table>
+    <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" id="foot">
+      <tr> 
+        <td><div class="footer">All rights reserved | <a href ="http://www.rapscena.com">Theme by Astro</a> | Powered by <a href ="http://www.xoops.org">XOOPS</a>
+        <br /><br />
+      </div>
+	 </td>
+  </tr>
+</table>
+	</td>
+  </tr>
+</table>
+	</td>
+  </tr>
+</table>
+</body>
+</html>
